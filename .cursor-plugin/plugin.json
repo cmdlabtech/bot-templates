@@ -1,0 +1,21 @@
+{
+  "name": "bambu-lan-printer",
+  "version": "1.0.0",
+  "description": "Run Bambu Lab 3D prints end to end over your home network with LAN Only Mode and Developer Mode: slice with the Bambu Studio CLI, upload, start on your confirmation, and monitor. No Bambu Cloud.",
+  "author": {
+    "name": "CMDLAB LLC",
+    "email": "contact@cmdlab.tech"
+  },
+  "homepage": "https://github.com/cmdlabtech/bambu-lan-printer",
+  "repository": "https://github.com/cmdlabtech/bambu-lan-printer",
+  "license": "MIT",
+  "keywords": [
+    "bambu",
+    "bambu-lab",
+    "3d-printing",
+    "lan",
+    "mqtt",
+    "slicing",
+    "bambu-studio"
+  ]
+}
