@@ -1,0 +1,29 @@
+{
+  "name": "cmdlab-bot-templates",
+  "owner": {
+    "name": "CMDLAB LLC",
+    "email": "contact@cmdlab.tech",
+    "url": "https://cmdlab.tech"
+  },
+  "metadata": {
+    "description": "Cursor plugins from CMDLAB LLC, starting with Bambu Lab LAN printing.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "bambu-lan-printer",
+      "source": "bot-templates/bambu-lan-printer",
+      "description": "Run Bambu Lab 3D prints end to end over your home network with LAN Only Mode and Developer Mode: slice with the Bambu Studio CLI, upload, start on your confirmation, and monitor. No Bambu Cloud.",
+      "version": "1.0.0",
+      "keywords": [
+        "bambu",
+        "bambu-lab",
+        "3d-printing",
+        "lan",
+        "mqtt",
+        "slicing",
+        "bambu-studio"
+      ]
+    }
+  ]
+}

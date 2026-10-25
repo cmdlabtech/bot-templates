@@ -1,39 +1,20 @@
-# Bambu LAN Printer
+# CMDLAB Cursor plugins
 
-Take 3D prints end to end on Bambu Lab printers over your home network, with no Bambu Cloud in the middle.
+Cursor plugins from CMDLAB LLC. Each plugin lives in its own folder and is listed in [`.cursor-plugin/marketplace.json`](.cursor-plugin/marketplace.json).
 
 [![Donate](https://img.shields.io/badge/Donate-cmdlab.tech-blue)](https://cmdlab.tech/donate)
 
-## Skills
+## Plugins
 
-- **bambu-printer-getting-started**: first-run setup. Covers prerequisites, LAN Only Mode and Developer Mode, macOS Local Network permission, IP, masked access code, serial, install, and proving status, files, camera, and slicing.
-- **bambu-print-slicing**: turns an STL, 3MF, or STEP into a printable `.gcode.3mf` with the Bambu Studio command line and stock Bambu profiles, applies the designer's print notes, and checks time, grams, plate fit, and warnings. Ships `slice_bambu.py`.
-- **bambu-lan-printer-control**: reads status, files, and camera snapshots, and pauses, resumes, stops, uploads, and starts prints over MQTT and FTPS. Includes the end-to-end flow from model to finished print. Ships `bambu_lan.py`.
+| Plugin | Folder | What it does |
+| --- | --- | --- |
+| **bambu-lan-printer** (1.0.0) | [`bot-templates/bambu-lan-printer`](bot-templates/bambu-lan-printer) | Runs Bambu Lab 3D prints end to end over your home network with LAN Only Mode and Developer Mode: slice with the Bambu Studio CLI, upload, start on your confirmation, and monitor. No Bambu Cloud. |
 
-## Install
-
-From the Cursor Marketplace, once listed: search for **bambu-lan-printer** and install it.
-
-To install locally, clone this repository into your Cursor plugins folder and reload Cursor:
-
-```sh
-git clone https://github.com/cmdlabtech/bambu-lan-printer.git ~/.cursor/plugins/local/bambu-lan-printer
-```
-
-The two helper scripts (`skills/bambu-lan-printer-control/bambu_lan.py` and `skills/bambu-print-slicing/slice_bambu.py`) use only the Python 3 standard library. The skills copy them onto the computer that shares a network with the printer.
-
-## Requirements
-
-- A Bambu Lab printer with Developer Mode firmware (X1 01.08.03.00, P1 01.08.02.00, A1 and A1 mini 01.05.00.00, H2D 01.01.00.01 or later).
-- A computer on the same network as the printer, with Python 3 and Bambu Studio installed.
-
-## Safety
-
-Starting, stopping, and raw G-code always need the owner's explicit confirmation. The access code lives only in a mode-600 file on the owner's computer and is never printed. Developer Mode leaves a printer open to anyone on the network who has its code, so keep printers off guest networks. Bambu does not support Developer Mode.
+See each plugin's README for install steps and requirements.
 
 ## Support
 
-If this plugin saves you time, you can support the work at [cmdlab.tech/donate](https://cmdlab.tech/donate).
+If these plugins save you time, you can support the work at [cmdlab.tech/donate](https://cmdlab.tech/donate).
 
 ## License
 
