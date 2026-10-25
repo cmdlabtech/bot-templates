@@ -19,10 +19,10 @@ To install locally, clone the repository and link this plugin's folder into your
 ```sh
 git clone https://github.com/cmdlabtech/bot-templates.git ~/src/bot-templates
 mkdir -p ~/.cursor/plugins/local
-ln -s ~/src/bot-templates/bot-templates/bambu-lan-printer ~/.cursor/plugins/local/bambu-lan-printer
+ln -s ~/src/bot-templates/bot-plugins/bambu-lan-printer ~/.cursor/plugins/local/bambu-lan-printer
 ```
 
-The plugin lives in `bot-templates/bambu-lan-printer/` of the repository. The two helper scripts (`skills/bambu-lan-printer-control/bambu_lan.py` and `skills/bambu-print-slicing/slice_bambu.py`, relative to the plugin folder) need Python 3. `slice_bambu.py` uses only the standard library, and `bambu_lan.py` also needs `paho-mqtt`, which the control skill installs in a virtual environment. The skills copy them onto the computer that shares a network with the printer.
+The plugin lives in `bot-plugins/bambu-lan-printer/` of the repository. The two helper scripts (`skills/bambu-lan-printer-control/bambu_lan.py` and `skills/bambu-print-slicing/slice_bambu.py`, relative to the plugin folder) need Python 3. `slice_bambu.py` uses only the standard library, and `bambu_lan.py` also needs `paho-mqtt`, which the control skill installs in a virtual environment. The skills copy them onto the computer that shares a network with the printer.
 
 ## Requirements
 
