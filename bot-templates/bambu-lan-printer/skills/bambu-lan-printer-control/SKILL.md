@@ -1,7 +1,7 @@
 ---
 name: bambu-lan-printer-control
 description: >-
-  Use when a bot checks on or controls a Bambu Lab 3D printer over the local
+  Use when an agent checks on or controls a Bambu Lab 3D printer over the local
   network (LAN Only Mode plus Developer Mode): install the bambu_lan.py CLI on
   the owner's computer, take a model from file to finished print, read status,
   list or upload files, take a camera snapshot, pause, resume, stop, or start a
@@ -13,7 +13,7 @@ Bambu printers on LAN Only Mode with Developer Mode on accept local control. Sin
 
 ## Where commands run
 
-The bot's own computer is in the cloud and cannot reach a home LAN. Every printer command runs on one of the owner's registered computers that sits on the same network as the printer: call ListMachines, pick that desktop's machineId, and pass it to Shell. On macOS the Grok Bot app must be allowed under System Settings, Privacy & Security, Local Network, or every connection fails with "No route to host" even though the printer is on the same subnet.
+A cloud-hosted agent cannot reach a home LAN. Run every printer command on a computer on the same local network as the printer. On macOS, the app that runs the commands (your terminal or agent app) must be allowed under System Settings, Privacy & Security, Local Network, or every connection fails with "No route to host" even though the printer is on the same subnet.
 
 ## Interface facts
 
@@ -28,16 +28,16 @@ The bot's own computer is in the cloud and cannot reach a home LAN. Every printe
 1. Make `~/.bambu` with mode 700.
 2. Read the helper file `bambu_lan.py` that ships beside this skill and write it exactly to `~/.bambu/bambu_lan.py`.
 3. `python3 -m venv ~/.bambu/venv && ~/.bambu/venv/bin/pip install paho-mqtt`.
-4. Write `~/.bambu/printer.env` with mode 600 holding `BAMBU_HOST`, `BAMBU_SERIAL`, and `BAMBU_ACCESS_CODE`. Get the access code through a masked secret request, write the file on your own computer with umask 077, copy it to the owner's computer with CopyFromBox, and delete your copy. Never echo, cat, or print the access code or that file. For more than one printer, use one env file per printer, named for the printer.
+4. Write `~/.bambu/printer.env` with mode 600 holding `BAMBU_HOST`, `BAMBU_SERIAL`, and `BAMBU_ACCESS_CODE`. Ask the user for the access code and keep it out of chat logs. Write the file with umask 077; if you are working somewhere other than the printer's computer, write it where you are first, copy it to that computer, and delete your copy. Never echo, cat, or print the access code or that file. For more than one printer, use one env file per printer, named for the printer.
 5. Run `status` once to prove the connection.
 
 Run every command as: `cd ~/.bambu && set -a && . ./printer.env && set +a && ./venv/bin/python bambu_lan.py <command>`. macOS has no `timeout` command; the script has its own watchdog.
 
 ## End to end: model file to finished print
 
-When the owner or another bot hands over a model (for example a designer bot's STL with print notes):
+When the owner or another agent hands over a model (for example a designer's STL with print notes):
 
-1. **Gather.** Copy the model into a job folder on the owner's computer (`~/.bambu/jobs/<job>/`, CopyFromBox if it is on your own computer). Read the designer's notes: material, layer height, walls, infill, supports, brim, orientation, and any fit-test piece.
+1. **Gather.** Copy the model into a job folder on the owner's computer (`~/.bambu/jobs/<job>/`; copy the file to that computer if it is somewhere else). Read the designer's notes: material, layer height, walls, infill, supports, brim, orientation, and any fit-test piece.
 2. **Check the printer.** Run `status` and confirm with the owner which printer, which filament is loaded and where (AMS slot or external spool), the nozzle size, and the build plate. If a design ships a fit-test piece, plan to print that first.
 3. **Slice.** Follow the bambu-print-slicing skill. It is read-only for the printer and needs no confirmation.
 4. **Present.** Tell the owner the printer, profiles, estimated time, filament grams, plate fit, and any warnings, and show the plate preview.

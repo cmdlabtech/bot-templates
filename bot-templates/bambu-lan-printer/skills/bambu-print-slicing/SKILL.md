@@ -1,7 +1,7 @@
 ---
 name: bambu-print-slicing
 description: >-
-  Use when a bot needs to turn a model file (STL, 3MF, STEP) into a printable
+  Use when an agent needs to turn a model file (STL, 3MF, STEP) into a printable
   .gcode.3mf for a Bambu Lab printer: pick stock profiles for the printer,
   nozzle, filament, and plate, apply the designer's print notes, slice headless
   with the Bambu Studio command line on the owner's computer, and check the
@@ -9,7 +9,7 @@ description: >-
 ---
 # Bambu print slicing
 
-Slicing runs on the owner's computer that has Bambu Studio installed (ListMachines, then Shell with that machineId), in a job folder such as `~/.bambu/jobs/<job>/`. Keep one folder per job and never overwrite or delete the owner's other files.
+Slicing runs on the owner's computer that has Bambu Studio installed (run these commands on that computer), in a job folder such as `~/.bambu/jobs/<job>/`. Keep one folder per job and never overwrite or delete the owner's other files.
 
 Use this when the owner hands you a model (STL, 3MF, STEP) and wants it printed. Slicing only reads files and writes a new file on the owner's computer; it never touches the printer, so it needs no confirmation. Uploading and starting the print follow the gates in the bambu-lan-printer-control skill.
 

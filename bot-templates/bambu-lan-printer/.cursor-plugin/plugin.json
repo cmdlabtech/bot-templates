@@ -6,9 +6,10 @@
     "name": "CMDLAB LLC",
     "email": "contact@cmdlab.tech"
   },
-  "homepage": "https://github.com/cmdlabtech/bambu-lan-printer/tree/main/bot-templates/bambu-lan-printer",
-  "repository": "https://github.com/cmdlabtech/bambu-lan-printer",
+  "homepage": "https://github.com/cmdlabtech/bot-templates/tree/main/bot-templates/bambu-lan-printer",
+  "repository": "https://github.com/cmdlabtech/bot-templates",
   "license": "MIT",
+  "logo": "assets/logo.png",
   "keywords": [
     "bambu",
     "bambu-lab",

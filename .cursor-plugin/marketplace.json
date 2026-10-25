@@ -23,7 +23,8 @@
         "mqtt",
         "slicing",
         "bambu-studio"
-      ]
+      ],
+      "logo": "assets/logo.png"
     }
   ]
 }
